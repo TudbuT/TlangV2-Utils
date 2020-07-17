@@ -1,0 +1,76 @@
+def fun pnl
+    def str t_tmp0 -
+    ld t_tmp0
+    set str \n
+    output
+    st t_tmp0
+return
+
+def fun shift+
+    def int t_tmp1 0
+    def int t_tmp2 0
+    def int t_tmp3 0
+    ld t_tmp1
+    lda t_tmp2
+    ldb t_tmp3
+
+    st t_tmp3
+    sta t_tmp1
+    stb t_tmp2
+return
+def fun shift-
+    def int t_tmp4 0
+    def int t_tmp5 0
+    def int t_tmp6 0
+    ld t_tmp4
+    lda t_tmp5
+    ldb t_tmp6
+
+    st t_tmp5
+    sta t_tmp6
+    stb t_tmp4
+return
+
+def fun add
+    def int t_tmp7 0
+    ldb t_tmp7
+    fun shift+
+    add
+    stb t_tmp7
+return
+
+def fun addString
+    def str t_tmp8 0
+    def str t_tmp9 0
+    lda t_tmp8
+    ldb t_tmp9
+    def str t_tmp10 --
+    sta t_tmp10
+    stb t_tmp8
+    add
+    ld t_tmp8
+    sta t_tmp8
+    stb t_tmp9
+    add
+    ld t_tmp8
+    sta t_tmp8
+    set int 0
+    ld t_tmp10
+    stb t_tmp10
+    sub
+    ld t_tmp8
+    sta t_tmp8
+    set int 0
+    ld t_tmp10
+    stb t_tmp10
+    sub
+return
+
+def fun pl
+    def str t_tmp11 0
+    ld t_tmp11
+    output
+    set str \n
+    output
+    st t_tmp11
+return
